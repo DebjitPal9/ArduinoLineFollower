@@ -36,9 +36,9 @@ if((digitalRead(R_S) == 1)&&(digitalRead(L_S) == 1)){
 }
 
 void forward(){ 
-  analogWrite(m1_f,150);
+  analogWrite(m1_f,100);
   analogWrite(m1_b,0);
-  analogWrite(m2_f,150); 
+  analogWrite(m2_f,100); 
   analogWrite(m2_b,0); 
 }
 
