@@ -36,9 +36,9 @@ if((digitalRead(R_S) == 1)&&(digitalRead(L_S) == 1)){
 }
 
 void forward(){ 
-  analogWrite(m1_f,150);
+  analogWrite(m1_f,100);
   analogWrite(m1_b,0);
-  analogWrite(m2_f,150); 
+  analogWrite(m2_f,100); 
   analogWrite(m2_b,0); 
 }
 
@@ -48,6 +48,7 @@ void turnRight(){ //turnRight
   analogWrite(m1_b,0);
   analogWrite(m2_f,0); 
   analogWrite(m2_b,0);
+  delay(10);
   for(int j=0;j<100;j++){
     analogWrite(m2_b,j);
     delay(2);
@@ -68,6 +69,7 @@ void turnLeft(){ //turnLeft
   analogWrite(m1_b,0);
   analogWrite(m2_f,0);
   analogWrite(m2_b,0);
+  delay(10);
   for(int j=0;j<100;j++){//--->300/150
     analogWrite(m1_b,j);
     delay(2);
