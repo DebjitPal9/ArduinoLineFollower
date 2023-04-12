@@ -41,8 +41,8 @@ if((digitalRead(R_S) == 1)&&(digitalRead(L_S) == 1)){
 }
 
 void forward(){ 
-analogWrite(m1_f,80);
-analogWrite(m2_f,80); 
+analogWrite(m1_f,65);
+analogWrite(m2_f,65); 
 analogWrite(m1_b,0);
 analogWrite(m2_b,0);
 }
@@ -52,8 +52,10 @@ ch='R';
 analogWrite(m1_f,0);
 analogWrite(m1_b,0);
 analogWrite(m2_f,0); 
+while(digitalRead(R_S)==1){
 analogWrite(m2_b,80);
-delay(340);
+}
+delay(150);
 analogWrite(m1_f,80);
 analogWrite(m1_b,0);
 analogWrite(m2_f,0); 
@@ -66,7 +68,6 @@ if(digitalRead(R_S)==0&&digitalRead(L_S)==0){
 else if(digitalRead(L_S)==1&&digitalRead(R_S)==0){
   while(digitalRead(L_S)==1){
   analogWrite(m1_f,70);
-  delay(10);
   }
   analogWrite(m1_f,0);
 }
@@ -75,14 +76,15 @@ else if(digitalRead(L_S)==1&&digitalRead(R_S)==0){
 void turnLeft(){ 
 ch='L';
 analogWrite(m1_f,0);
-analogWrite(m1_b,80);
 analogWrite(m2_f,0);  
+while(digitalRead(L_S)==1){
+  analogWrite(m1_b,80);
+}
+delay(150);
 analogWrite(m2_b,0);
-delay(340);
 analogWrite(m1_f,0);
 analogWrite(m1_b,0);
 analogWrite(m2_f,80); 
-analogWrite(m2_b,0);
 delay(400);
 analogWrite(m2_f,0); 
 if(digitalRead(L_S)==0&&digitalRead(R_S)==0){
@@ -91,7 +93,6 @@ if(digitalRead(L_S)==0&&digitalRead(R_S)==0){
 else if(digitalRead(R_S)==1&&digitalRead(L_S)==0){
   while(digitalRead(R_S)==1){
   analogWrite(m2_f,70);
-  delay(10);
   }
   analogWrite(m2_f,0);
 }
@@ -100,11 +101,10 @@ else if(digitalRead(R_S)==1&&digitalRead(L_S)==0){
 void Stop(){ //stop
 if(ch=='L'){
 analogWrite(m1_f,0);
-analogWrite(m1_b,0);
 analogWrite(m2_f,0); 
 analogWrite(m2_b,0);
 analogWrite(m1_b,80);
-delay(340);
+delay(300);
 analogWrite(m1_b,0);
 while(digitalRead(R_S)==1&&digitalRead(L_S)==0){
   analogWrite(m2_f,70);
@@ -114,11 +114,10 @@ while(digitalRead(R_S)==1&&digitalRead(L_S)==0){
 }
 if(ch=='R'){
 analogWrite(m2_f,0);
-analogWrite(m2_b,0);
 analogWrite(m1_f,0); 
 analogWrite(m1_b,0);
 analogWrite(m2_b,80);
-delay(320);
+delay(300);
 analogWrite(m2_b,0);
 while(digitalRead(L_S)==1&&digitalRead(R_S)==0){
   analogWrite(m1_f,70);
