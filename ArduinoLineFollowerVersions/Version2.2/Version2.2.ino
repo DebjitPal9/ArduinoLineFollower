@@ -60,7 +60,7 @@ analogWrite(m1_f,80);
 analogWrite(m1_b,0);
 analogWrite(m2_f,0); 
 analogWrite(m2_b,0);
-delay(400);
+delay(450);
 analogWrite(m1_f,0);
 if(digitalRead(R_S)==0&&digitalRead(L_S)==0){
   forward();
@@ -85,7 +85,7 @@ analogWrite(m2_b,0);
 analogWrite(m1_f,0);
 analogWrite(m1_b,0);
 analogWrite(m2_f,80); 
-delay(400);
+delay(450);
 analogWrite(m2_f,0); 
 if(digitalRead(L_S)==0&&digitalRead(R_S)==0){
   forward();
